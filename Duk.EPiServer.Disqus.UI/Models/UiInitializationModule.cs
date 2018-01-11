@@ -18,7 +18,7 @@ namespace Duk.EPiServer.Disqus.UI.Models
         /// <param name="context">The context.</param>
         public void ConfigureContainer(ServiceConfigurationContext context)
         {
-            context.Container.Configure(ce => ce.For<IRenderingEditModeExtension>().Use<RenderingEditModeExtension>());
+            context.StructureMap().Configure(ce => ce.For<IRenderingEditModeExtension>().Use<RenderingEditModeExtension>());
         }
 
         /// <summary>
@@ -34,14 +34,6 @@ namespace Duk.EPiServer.Disqus.UI.Models
         /// </summary>
         /// <param name="context">The context.</param>
         public void Uninitialize(InitializationEngine context)
-        {
-        }
-
-        /// <summary>
-        /// Preloads the specified parameters.
-        /// </summary>
-        /// <param name="parameters">The parameters.</param>
-        public void Preload(string[] parameters)
         {
         }
     }
